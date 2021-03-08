@@ -4,14 +4,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
     <title>SCANDI</title>
 </head>
 <body>
-    <header>
-        <img src="img/logo.svg" alt="Логотип SCANDI" width="91" height="25">
-        <nav>
-            <!-- !ссылки-якоря для перемещения по странице -->
-            <ul>
+    <header class="main-header container">
+        <nav> <!-- ?Нужно ли оборачивать в nav? -->
+            <img src="img/logo.svg" alt="Логотип SCANDI" width="91" height="25">
+            <ul class="main-header__list"> <!-- !ссылки-якоря для перемещения по странице -->
                 <li><a href="#">О компании</a></li>
                 <li><a href="#">Портфолио</a></li>
                 <li><a href="#">Команда</a></li>
@@ -21,75 +23,75 @@
             </ul>
             <a href="tel:+79818574624">+7 (981) 857-46-24</a>
         </nav>
-        <section>
-            <p>Поможем сделать 
+        <section class="main-header__preview">
+            <span>Поможем сделать 
             вашу квартиру
-            уютнее</p>
+            уютнее</span>
         <p>Подбираем текстиль, мебель и аксессуары
             под ваш интерьер, находим магазины
             и помогаем организовать доставку</p>
             <!-- !якорь вниз на форму заявки -->
-            <a href="#">Оставить заявку</a>
+            <a class="btn" href="#">Оставить заявку</a>
         </section>
     </header>
     <main>
-        <h1>Дизайн-студия SCAHDI</h1>
+        <h1 class="visually-hidden">Дизайн-студия SCAHDI</h1>
         <section>
-            <h2>О нас</h2>
+            <h2 class="section__title">О нас</h2>
             <p>Премиальный европейский текстиль — одно из самых главных направлений работы коллектива. Создавать неповторимые интерьеры для наших дорогих клиентов, уделяя внимание мельчайшим деталям — вот то, что по-настоящему вдохновляет дизайнеров нашей студии.
                 Наш коллектив сделает все, чтобы после сотрудничества с нами, Вам было приятно сказать:
                 «Да! Это именно то, что действительно достойно моего дома!»</p>
         </section>
-        <section>
+        <section class="features">
             <h2 class="visually-hidden">Преимущества</h2>
-            <ul>
-                <li>5 лет опыта</li>
-                <li>100 проектов</li>
-                <li>10 наград</li>
+            <ul class="features__list">
+                <li class="features__item"><span>5</span> лет опыта</li>
+                <li class="features__item"><span>100</span> проектов</li>
+                <li class="features__item"><span>10</span> наград</li>
             </ul>
         </section>
-        <section>
-            <h2>Наши работы</h2>
+        <section class="projects">
+            <h2 class="section__title">Наши работы</h2>
             <div>
                 <img src="img/project_1.jpg" alt="Проект квартиры студии" width="488" height="451">
-                <div>
-                    <p>Квартира-студия
-                        30 кв.м.</p>
+                <div class="item-project__cover">
+                    <h3>Квартира-студия
+                        30 кв.м.</h3>
                     <p>В квартире были светлые стены и тёплые цвета. Мы сконцентрировались
                         на отсылках к природе и сделали ребятам уютный интерьер, отсылающий к виллам островов Бали.</p>
                 </div>
             </div>
             <div>
                 <img src="img/project_2.jpg" alt="Проект кухни гостинной" width="692" height="451">
-                <div>
-                    <p>Квартира-студия
-                        30 кв.м.</p>
+                <div class="item-project__cover">
+                    <h3>Квартира-студия
+                        30 кв.м.</h3>
                     <p>В квартире были светлые стены и тёплые цвета. Мы сконцентрировались
                         на отсылках к природе и сделали ребятам уютный интерьер, отсылающий к виллам островов Бали.</p>
                 </div>
             </div>
             <div>
                 <img src="img/project_3.jpg" alt="Дизайн квартиры-студии" width="692" height="451">
-                <div>
-                    <p>Квартира-студия
-                        30 кв.м.</p>
+                <div class="item-project__cover">
+                    <h3>Квартира-студия
+                        30 кв.м.</h3>
                     <p>В квартире были светлые стены и тёплые цвета. Мы сконцентрировались
                         на отсылках к природе и сделали ребятам уютный интерьер, отсылающий к виллам островов Бали.</p>
                 </div>
             </div>
             <div>
                 <img src="img/project_4.jpg" alt="Дизайн ванной комнаты" width="488" height="451">
-                <div>
-                    <p>Квартира-студия
-                        30 кв.м.</p>
+                <div class="item-project__cover">
+                    <h3>Квартира-студия
+                        30 кв.м.</h3>
                     <p>В квартире были светлые стены и тёплые цвета. Мы сконцентрировались
                         на отсылках к природе и сделали ребятам уютный интерьер, отсылающий к виллам островов Бали.</p>
                 </div>
             </div>
-            <a href="#">Смотреть ещё</a>
+            <a class="project__link-more" href="#">Смотреть ещё</a>
         </section>
         <section>
-            <h2>Команда</h2>
+            <h2 class="section__title">Команда</h2>
             <div>
                 <img src="img/employer_1.png" alt="Главный дизайнер Маша" width="320" height="249">
                 <p>Это Маша, наш главный дизайнер. Она отвечает за дизайн-проект, приезжает к вам домой, общается
@@ -109,7 +111,7 @@
             </div>
         </section>
         <section>
-            <h2>Как мы работаем</h2>
+            <h2 class="section__title">Как мы работаем</h2>
             <ol>
                 <li>Знакомимся, выезжаем
                     на объект, утверждаем концепцию, подписывем договор.</li>
@@ -122,7 +124,7 @@
             </ol>
         </section>
         <section>
-            <h2>Отзывы</h2>
+            <h2 class="section__title">Отзывы</h2>
             <a href="#">назад</a>
             <article>
                 <!-- !Вспомнить как оформлять цитаты -->
@@ -140,20 +142,20 @@
             </article>
             <a href="#">вперёд</a>
         </section>
-        <section>
-            <h2>Оставить заявку</h2>
+        <section class="request">
+            <h2 class="section__title">Оставить заявку</h2>
             <p>Оставьте свои контакты. Менеджер перезвонит
                 в удобное вам время и ответит на все вопросы.</p>
-                <form action="GET">
+                <form class="request__form" action="GET">
                     <input type="text" placeholder="Ваше имя">
                     <input type="text" placeholder="Введите телефон">
                     
-                    <button type="submit">Оставить заявку</button>
+                    <button class="btn" type="submit">Оставить заявку</button>
                 </form>
                 <img src="img/map.png" alt="Наш адрес: г. Санкт-петербург, ул. Большая Конюшенная, 19" width="590" height="624">
         </section>
     </main>
-    <footer>
+    <footer class="main-footer">
         <a href="tel:+79818574624">+7 (981) 857-46-24</a>
         <p>г. Санкт-петербург, ул. Большая Конюшенная, 19</p>
         <p>ИП Королёва А.А.</p>
