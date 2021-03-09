@@ -1,7 +1,9 @@
 :root {
     --basic-color: #533738;
     --basic-white-color: #ffffff;
-    --background-color: #EFE6E4;
+    --basic-background-color: #EFE6E4;
+    --dark-background-color: #8D7370;
+    --extra-background-color: #E2C4BA;
     --extra-color: #CC8B86;
 }
 
@@ -13,19 +15,42 @@ body {
     line-height: 30px;
 }
 
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;      
+}
+
+.clearfix::after {
+    content: "";
+    display: table; 
+    clear: both; 
+}
+
 .container {
     width: 1200px;
     padding: 0 100px;
     margin: 0 auto;
-    background-color: var(--background-color);
+    background-color: var(--basic-background-color);
 }
 
 /* header */
 .main-header {
+    /* width: 1200px; */
+    /* padding: 0 100px; */
     padding-top: 29px;
     background-image: url("../img/header.jpg");
+    background-repeat: no-repeat;
     height: 686px;
 }
+
 .main-header a {
     text-decoration: none;
     color: inherit;
@@ -109,18 +134,53 @@ body {
 }
 
 /* about us */
+.about-us {
+    padding-top: 65px;
+    padding-right: 182px;
+    padding-left: 182px;
+    padding-bottom: 21px;
+
+    width: 1036px;
+}
+
 .section__title {
     margin: 0;
+    margin-bottom: 40px;
     font-size: 40px;
     line-height: 50px;
     font-weight: 400;
     text-transform: uppercase;
+    text-align: center;
+}
+
+.about-us img {
+    float: left;
+}
+
+.about-us p {
+    margin-left: 508px;
+}
+
+/* features */
+.features {
+    background-color: var(--dark-background-color);
+    padding-top: 85px;
+    padding-bottom: 81px;
+    padding-right: 182px;
+    padding-left: 182px;
+    
+    width: 1036px;
 }
 
 .features__list {
     padding: 0;
     margin: 0;
     list-style: none;
+    
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
 }
 
 .features__item {
@@ -129,11 +189,39 @@ body {
     line-height: 37px;
     text-transform: uppercase;
     color: var(--basic-white-color);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .features__item span {
     font-size: 50px;
     line-height: 62px;
+    margin-bottom: 10px;
+}
+
+/* projects */
+.projects {
+    padding-top: 67px;
+    padding-bottom: 79px;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.projects .section__title {
+    text-align: start;
+    width: 100%;
+}
+
+.projects__item {
+    margin-bottom: 30px;
+}
+
+.projects__item img {
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 
 .item-project__cover {
@@ -153,11 +241,188 @@ body {
     font-weight: 500;
     font-size: 30px;
     line-height: 37px;
+    margin: 0 auto;
+    margin-top: 40px;
+
+    position: relative;
+}
+
+.project__link-more::after {
+    content: '';
+    position: absolute;
+    width: 61px;
+    height: 37px;
+    right: -70px;
+    top: 11px;
+
+    background-image: url('../img/arrow.svg');
+    background-repeat: no-repeat;
+}
+
+/* team */
+/* ?Как сдвинуть блок вправо (как в макете)? Блок work-process аналогично */
+.team {
+    padding-top: 50px;
+    padding-bottom: 94px;
+    padding-left: 159px;
+    padding-right: 182px;
+    width: 1059px;
+    background-color: var(--extra-background-color);
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    /* margin-right: 10px; */
+}
+
+.team .section__title {
+    width: 100%;
+}
+
+.team__item {
+    width: 320px;
+}
+
+/* work-process */
+.work-process {
+    padding-bottom: 91px;
+    background-color: var(--extra-background-color);
+}
+
+.work-process .section__title {
+    margin-bottom: 130px;
+}
+
+.work-process__list {
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+/* ?Как стилизовать цифры списка? */
+.work-process__list li {
+    position: relative;
+    width: 285px;
+    text-align: center;
+    margin-right: 20px;
+}
+
+.work-process__list li:last-child {
+    margin-right: 0;
+}
+
+.work-process__list li::before {
+    content: '';
+    color: var(--basic-white-color);
+    font-weight: 500;
+    font-size: 30px;
+    line-height: 30px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: absolute;
+    top: -90px;
+    left: 107px;
+    width: 70px;
+    height: 70px;
+
+    background-color: var(--dark-background-color);
+    border-radius: 50%;
+}
+
+.work-process__list li:nth-child(1):before {
+    content: '1';
+}
+.work-process__list li:nth-child(2):before {
+    content: '2';
+}
+.work-process__list li:nth-child(3):before {
+    content: '3';
+}
+.work-process__list li:nth-child(4):before {
+    content: '4';
+}
+
+/* reviews */
+.reviews {
+    padding-top: 51px;
+    padding-bottom: 65px;
+    padding-left: 159px;
+    padding-right: 182px;
+    width: 1059px;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.reviews blockquote {
+    margin: 0;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.reviews__arrow {
+    position: relative;
+}
+
+.reviews__arrow::before {
+    content: '';
+
+    position: absolute;
+    width: 70px;
+    height: 70px;
+
+    background-color: var(--extra-color);
+    border-radius: 50%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.arrow-review--left::before {
+    /* left: -100px; */
+    background-image: url("../img/arrow-left-white.svg");
+}
+
+.arrow-review--right::before {
+    background-image: url("../img/arrow-right-white.svg");
+}
+
+.reviews .section__title {
+    width: 100%;
+}
+
+.reviews__content {
+    width: 407px;
+    margin-right: 20px;
+}
+
+.reviews__imgs {
+    width: 407px;
+    
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.reviews__imgs img {
+    margin-bottom: 24px;
+}
+
+.reviews__imgs img:last-child {
+    margin-bottom: 0;
 }
 
 /* submit-request */
 .request {
     color: var(--basic-white-color);
+    background-color: var(--dark-background-color);
 }
 
 .request p {
@@ -171,7 +436,18 @@ body {
 }
 
 /* footer */
+.main-footer {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
 .main-footer a {
     text-decoration: none;
     color: inherit;
+    margin-right: 42px;
+}
+
+.cooperate {
+    margin-left: auto;
 }
