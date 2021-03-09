@@ -6,34 +6,82 @@
 }
 
 body {
+    margin: 0;
     font-family: 'Montserrat', 'Arial', sans-serif;
     color: var(--basic-color);
     font-size: 18px;
     line-height: 30px;
-    background-color: var(--background-color);
 }
 
 .container {
-    width: 1400px;
+    width: 1200px;
+    padding: 0 100px;
+    margin: 0 auto;
+    background-color: var(--background-color);
 }
 
 /* header */
 .main-header {
+    padding-top: 29px;
     background-image: url("../img/header.jpg");
-    height: 715px;
-    /* width: 1400px; */
+    height: 686px;
 }
 .main-header a {
-    font-size: 16px;
-    line-height: 20px;
     text-decoration: none;
     color: inherit;
+}
+
+.main-header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 84px;
+}
+
+.main-header img {
+    width: 91px;
+    height: 25px;
+    margin-right: 83px;
 }
 
 .main-header__list {
     padding: 0;
     margin: 0;
+    margin-right: 26px;
     list-style: none;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.main-header__list a {
+    font-size: 16px;
+    line-height: 20px;
+
+    display: block;
+    padding: 5px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.main-header__list li {
+    margin-right: 14px;
+}
+
+.main-header__list li:last-child {
+    margin-right: 0;
+}
+
+.main-header__phone {
+    font-size: 16px;
+    line-height: 20px;
+}
+
+.main-header__preview {
+    padding-left: 82px;
+    padding-right: 582px;
 }
 
 .main-header__preview span {
@@ -41,17 +89,22 @@ body {
     line-height: 62px;
 }
 
-/* !текст не по центру. Паддинги? */
+.main-header__preview p {
+    margin-top: 23px;
+    margin-bottom: 24px;
+}
+
 .btn {
+    box-sizing: border-box;
     display: inline-block;
     width: 309px;
     height: 74px;
+    padding-top: 24px;
     background-color: var(--extra-color);
 
     font-weight: 500;
     font-size: 20px;
     line-height: 24px;
-    vertical-align: middle;
     text-align: center;
 }
 
