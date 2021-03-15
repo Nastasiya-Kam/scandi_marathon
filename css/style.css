@@ -43,8 +43,6 @@ body {
 
 /* header */
 .main-header {
-    /* width: 1200px; */
-    /* padding: 0 100px; */
     padding-top: 29px;
     background-image: url("../img/header.jpg");
     background-repeat: no-repeat;
@@ -109,12 +107,12 @@ body {
     padding-right: 582px;
 }
 
-.main-header__preview span {
+.main-header__preview p:first-child {
     font-size: 50px;
     line-height: 62px;
 }
 
-.main-header__preview p {
+.main-header__preview p:last-child {
     margin-top: 23px;
     margin-bottom: 24px;
 }
@@ -124,13 +122,14 @@ body {
     display: inline-block;
     width: 309px;
     height: 74px;
-    padding-top: 24px;
-    background-color: var(--extra-color);
-
+    
+    font-family: inherit;
     font-weight: 500;
     font-size: 20px;
-    line-height: 24px;
+    line-height: 74px;
     text-align: center;
+    background-color: var(--extra-color);
+    border: none;
 }
 
 /* about us */
@@ -138,7 +137,7 @@ body {
     padding-top: 65px;
     padding-right: 182px;
     padding-left: 182px;
-    padding-bottom: 21px;
+    padding-bottom: 20px;
 
     width: 1036px;
 }
@@ -157,15 +156,20 @@ body {
     float: left;
 }
 
-.about-us p {
+.about-us__text {
     margin-left: 508px;
+    line-height: 31px;
+}
+
+.about-us__text + .about-us__text {
+    margin-top: 26px;
 }
 
 /* features */
 .features {
     background-color: var(--dark-background-color);
-    padding-top: 85px;
-    padding-bottom: 81px;
+    padding-top: 87px;
+    padding-bottom: 78px;
     padding-right: 182px;
     padding-left: 182px;
     
@@ -203,7 +207,7 @@ body {
 
 /* projects */
 .projects {
-    padding-top: 67px;
+    padding-top: 68px;
     padding-bottom: 79px;
 
     display: flex;
@@ -217,7 +221,7 @@ body {
 }
 
 .projects__item {
-    margin-bottom: 30px;
+    margin-bottom: 22px;
 }
 
 .projects__item img {
@@ -236,15 +240,17 @@ body {
 }
 
 .projects .project__link-more {
+    margin: 0 auto;
+    margin-top: 11px;
+    padding-right: 70px;
+    
+    position: relative;
+
     color: inherit;
     text-decoration: none;
     font-weight: 500;
     font-size: 30px;
     line-height: 37px;
-    margin: 0 auto;
-    margin-top: 40px;
-
-    position: relative;
 }
 
 .project__link-more::after {
@@ -252,7 +258,7 @@ body {
     position: absolute;
     width: 61px;
     height: 37px;
-    right: -70px;
+    right: 0;
     top: 11px;
 
     background-image: url('../img/arrow.svg');
@@ -260,19 +266,29 @@ body {
 }
 
 /* team */
-/* ?Как сдвинуть блок вправо (как в макете)? Блок work-process аналогично */
 .team {
     padding-top: 50px;
-    padding-bottom: 94px;
+    padding-bottom: 12px;
     padding-left: 159px;
-    padding-right: 182px;
-    width: 1059px;
-    background-color: var(--extra-background-color);
-
+    padding-right: 205px;
+    width: 1036px;
+    
+    position: relative;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
-    /* margin-right: 10px; */
+    justify-content: center;
+
+    background-color: var(--extra-background-color);
+}
+
+.team::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: var(--basic-background-color);
+    height: 100%;
+    width: 23px;
 }
 
 .team .section__title {
@@ -281,16 +297,38 @@ body {
 
 .team__item {
     width: 320px;
+    margin-right: 38px;
+}
+
+.team__item:nth-of-type(3n) {
+    margin-right: 0;
+}
+
+.team__desc {
+    margin-top: 2px;
 }
 
 /* work-process */
 .work-process {
-    padding-bottom: 91px;
+    padding-bottom: 80px;
+    position: relative;
+
     background-color: var(--extra-background-color);
 }
 
+.work-process::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: var(--basic-background-color);
+    height: 100%;
+    width: 23px;
+}
+
 .work-process .section__title {
-    margin-bottom: 130px;
+    margin-bottom: 40px;
+    padding-left: 46px;
 }
 
 .work-process__list {
@@ -301,19 +339,20 @@ body {
     justify-content: space-between;
 }
 
-/* ?Как стилизовать цифры списка? */
-.work-process__list li {
+/* ?Как стилизовать цифры списка автоматически? */
+.work-process__item {
     position: relative;
     width: 285px;
     text-align: center;
     margin-right: 20px;
+    padding-top: 90px;
 }
 
-.work-process__list li:last-child {
+.work-process__item:last-child {
     margin-right: 0;
 }
 
-.work-process__list li::before {
+.work-process__item::before {
     content: '';
     color: var(--basic-white-color);
     font-weight: 500;
@@ -325,7 +364,7 @@ body {
     align-items: center;
 
     position: absolute;
-    top: -90px;
+    top: 0;
     left: 107px;
     width: 70px;
     height: 70px;
@@ -334,16 +373,16 @@ body {
     border-radius: 50%;
 }
 
-.work-process__list li:nth-child(1):before {
+.work-process__item:nth-child(1):before {
     content: '1';
 }
-.work-process__list li:nth-child(2):before {
+.work-process__item:nth-child(2):before {
     content: '2';
 }
-.work-process__list li:nth-child(3):before {
+.work-process__item:nth-child(3):before {
     content: '3';
 }
-.work-process__list li:nth-child(4):before {
+.work-process__item:nth-child(4):before {
     content: '4';
 }
 
@@ -351,9 +390,9 @@ body {
 .reviews {
     padding-top: 51px;
     padding-bottom: 65px;
-    padding-left: 159px;
+    padding-left: 182px;
     padding-right: 182px;
-    width: 1059px;
+    width: 1037px;
 
     display: flex;
     flex-wrap: wrap;
@@ -371,6 +410,10 @@ body {
 
 .reviews__arrow {
     position: relative;
+    display: block;
+    width: 70px;
+    height: 70px;
+    top: -13px;
 }
 
 .reviews__arrow::before {
@@ -387,7 +430,6 @@ body {
 }
 
 .arrow-review--left::before {
-    /* left: -100px; */
     background-image: url("../img/arrow-left-white.svg");
 }
 
@@ -402,6 +444,20 @@ body {
 .reviews__content {
     width: 407px;
     margin-right: 20px;
+    vertical-align: middle;
+}
+
+.reviews__desc {
+    margin: 0;
+}
+
+.reviews__desc + .reviews__desc {
+    margin-top: 32px;
+}
+
+.reviews__user {
+    margin-top: 27px;
+    display: block;
 }
 
 .reviews__imgs {
@@ -419,20 +475,73 @@ body {
     margin-bottom: 0;
 }
 
-/* submit-request */
-.request {
-    color: var(--basic-white-color);
+/* columns */
+.index-columns {
+    display: flex;
+    justify-content: space-between;
+
+
     background-color: var(--dark-background-color);
+
 }
 
-.request p {
+/* submit-request */
+.request {
+    padding-top: 50px;
+    padding-right: 20px;
+    padding-left: 82px;
+
+    color: var(--basic-white-color);
+}
+
+.request .section__title {
+    margin-bottom: 20px;
+    text-align: start;
+}
+
+.request__desc {
+    margin: 0;
+    margin-bottom: 40px;
+
     opacity: 0.6;
 }
 
-.request__form input {
+.request__form {
+    display: flex;
+    flex-direction: column;
+}
+
+.request__input {
+    box-sizing: border-box;
+    padding-top: 6px;
+    padding-bottom: 7px;
+    padding-left: 0;
+    width: 100%;
+
     font-family: inherit;
     font-size: inherit;
     line-height: inherit;
+
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #FFFFFF;
+}
+
+.request__input::placeholder {
+    color: #F6EDE9;
+}
+
+.request-form__item + .request-form__item {
+    margin-top: 26px;
+}
+
+.request-form__item + .btn {
+    margin-top: 31px;
+}
+
+/* map */
+.address iframe {
+    border: 0;
 }
 
 /* footer */
@@ -440,6 +549,8 @@ body {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
+    padding-top: 15px;
+    padding-bottom: 23px;
 }
 
 .main-footer a {
