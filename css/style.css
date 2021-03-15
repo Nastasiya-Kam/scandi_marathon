@@ -542,6 +542,7 @@ body {
 /* map */
 .address iframe {
     border: 0;
+    display: block;
 }
 
 /* footer */
